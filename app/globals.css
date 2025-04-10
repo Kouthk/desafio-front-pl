@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Variáveis de cores do sistema */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 196 84% 22%; /* #095169 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 152 39% 53%; /* #53ba83 */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 180 93% 31%; /* #059b9a */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 196 84% 22%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 152 39% 53%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 180 93% 31%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Variáveis de cores personalizadas */
+  :root {
+    --color-primary-dark: #0c0636;
+    --color-primary: #095169;
+    --color-accent: #059b9a;
+    --color-secondary: #53ba83;
+    --color-highlight: #9fd86b;
+
+    --color-text-primary: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-text-muted: #767676;
+    --color-text-light: #f8f8f8;
+  }
+}
+
+@layer components {
+  /* Componentes responsivos */
+  .responsive-container {
+    @apply container px-4 md:px-6 mx-auto;
+  }
+
+  .responsive-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .responsive-flex {
+    @apply flex flex-col md:flex-row gap-4;
+  }
+
+  /* Estilos de texto */
+  .heading-1 {
+    @apply text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl text-primary-dark;
+  }
+
+  .heading-2 {
+    @apply text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl text-primary;
+  }
+
+  .heading-3 {
+    @apply text-xl font-bold sm:text-2xl text-primary;
+  }
+
+  .paragraph {
+    @apply text-text-secondary leading-relaxed;
+  }
+
+  .paragraph-small {
+    @apply text-sm text-text-muted;
+  }
+
+  /* Estilos de cartões */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Estilos de botões */
+  .btn-primary {
+    @apply bg-primary text-text-light hover:bg-primary-dark transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-text-primary hover:bg-accent transition-colors;
+  }
+
+  .btn-accent {
+    @apply bg-accent text-text-light hover:bg-primary transition-colors;
+  }
+
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-text-light transition-colors;
+  }
+}
+
